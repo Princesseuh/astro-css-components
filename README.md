@@ -32,7 +32,7 @@ _BaseLayout.astro_
 import { CSSComponent } from "astro-css-components"
 ---
 
-<!DOCTYPE html>QQ
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -87,7 +87,7 @@ Unless used with [global](#global), the component will be tied to the current UR
 
 #### global
 
-By adding this props, you can make the component global, this mean you can call it from everywhere using [getByName](#getByName)
+By adding this props, you can make the component global, this mean you can call it from everywhere using [getByName](#getbyname)
 
 **Example:**
 
@@ -97,7 +97,7 @@ By adding this props, you can make the component global, this mean you can call 
 
 ### getForURL
 
-Get the components for the current URL, this get all the components registered for the current URL, to get a specific component, use [getByName](#getByName)
+Get the components for the current URL, this get all the components registered for the current URL, to get a specific component, use [getByName](#getbyname)
 
 **Example:**
 
