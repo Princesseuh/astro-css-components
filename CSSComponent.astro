@@ -1,0 +1,36 @@
+---
+import {
+  addComponentForURL,
+  addGlobalComponent,
+  getComponentsForURL,
+  getComponentByName,
+} from "./library.js"
+
+const {
+  register = undefined,
+  global = false,
+  getForURL = false,
+  getByName = undefined,
+} = Astro.props
+const { url } = Astro.request
+
+let components = []
+
+if (getForURL) {
+  components = getComponentsForURL(url)
+}
+
+if (getByName) {
+  components = [getComponentByName(getByName, url)]
+}
+
+if (register) {
+  if (global) {
+    addGlobalComponent(register)
+  } else {
+    addComponentForURL(url, register)
+  }
+}
+---
+
+{!register && `<style>${components.map((component) => component.content)}</style>`}
