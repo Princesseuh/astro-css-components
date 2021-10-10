@@ -22,7 +22,7 @@ function getComponentsForURL(url) {
   return componentLibrary[url] || []
 }
 
-function getComponentByNameForURL(name, url) {
+function getComponentByName(name, url) {
   return (
     componentLibrary.global.find((component) => component.name === name) ||
     componentLibrary[url].find((component) => component.name === name)
@@ -39,4 +39,4 @@ function addGlobalComponent(component) {
   }
 }
 
-export { addComponentForURL, getComponentsForURL, getComponentByNameForURL, addGlobalComponent }
+export { addComponentForURL, getComponentsForURL, getComponentByName, addGlobalComponent }

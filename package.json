@@ -1,6 +1,6 @@
 {
   "name": "astro-css-components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CSS Components for Astro",
   "main": "index.js",
   "scripts": {
