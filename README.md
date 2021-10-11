@@ -113,6 +113,16 @@ By adding this props, you can only register the component when a certain conditi
 <CSSComponent register={{ name: "should-be-orange", content: ".should-be-orange {color: orange;}" }} conditional={page.loadCSSModules.includes("orange")} />
 ```
 
+#### minify
+
+By adding this props, the CSS will be minified through [csso](https://github.com/css/csso)
+
+**Example:**
+
+```jsx
+<CSSComponent minify register={{ name: "should-be-purple", content: ".should-be-purple {color: purple;}" }} />
+```
+
 ### getForURL
 
 Get the components for the current URL, this get all the components registered for the current URL, to get a specific component, use [getByName](#getbyname)

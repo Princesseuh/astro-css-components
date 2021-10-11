@@ -6,8 +6,8 @@ const componentLibrary = {
 
 // Adding
 
-function addComponentForURL(url, component) {
-  component = getCSSForComponent(component)
+function addComponentForURL(url, component, minify) {
+  component = getCSSForComponent(component, minify)
 
   if (!(url in componentLibrary)) {
     componentLibrary[url] = []
@@ -24,8 +24,8 @@ function addComponentForURL(url, component) {
   }
 }
 
-function addGlobalComponent(component) {
-  component = getCSSForComponent(component)
+function addGlobalComponent(component, minify) {
+  component = getCSSForComponent(component, minify)
 
   const oldComponent = componentLibrary.global.findIndex((comp) => comp.name === component.name)
 

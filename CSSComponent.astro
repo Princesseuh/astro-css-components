@@ -11,7 +11,8 @@ const {
   global = false,
   getForURL = false,
   getByName = undefined,
-  conditional = true
+  conditional = true,
+  minify = false
 } = Astro.props
 const { url } = Astro.request
 
@@ -27,9 +28,9 @@ if (getByName) {
 
 if (register && conditional) {
   if (global) {
-    addGlobalComponent(register)
+    addGlobalComponent(register, minify)
   } else {
-    addComponentForURL(url, register)
+    addComponentForURL(url, register, minify)
   }
 }
 ---
