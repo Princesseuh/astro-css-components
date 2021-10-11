@@ -34,4 +34,4 @@ if (register && conditional) {
 }
 ---
 
-{!register && `<style>${components.map((component) => component.content)}</style>`}
+{!register && `<style>${components.map((component) => component.content).join('')}</style>`}
