@@ -1,8 +1,14 @@
+import { getCSSForComponent } from "./utils.js"
+
 const componentLibrary = {
   global: [],
 }
 
+// Adding
+
 function addComponentForURL(url, component) {
+  component = getCSSForComponent(component)
+
   if (!(url in componentLibrary)) {
     componentLibrary[url] = []
   }
@@ -18,6 +24,20 @@ function addComponentForURL(url, component) {
   }
 }
 
+function addGlobalComponent(component) {
+  component = getCSSForComponent(component)
+
+  const oldComponent = componentLibrary.global.findIndex((comp) => comp.name === component.name)
+
+  if (oldComponent === -1) {
+    componentLibrary.global.push(component)
+  } else {
+    componentLibrary.global[oldComponent] = component
+  }
+}
+
+// Getting
+
 function getComponentsForURL(url) {
   return componentLibrary[url] || []
 }
@@ -29,14 +49,12 @@ function getComponentByName(name, url) {
   )
 }
 
-function addGlobalComponent(component) {
-  const oldComponent = componentLibrary.global.findIndex((comp) => comp.name === component.name)
+// Debugging
 
-  if (oldComponent === -1) {
-    componentLibrary.global.push(component)
-  } else {
-    componentLibrary.global[oldComponent] = component
-  }
+function logComponents() {
+  console.log(componentLibrary)
 }
 
-export { addComponentForURL, getComponentsForURL, getComponentByName, addGlobalComponent }
+// Exporting
+
+export { addComponentForURL, addGlobalComponent, getComponentsForURL, getComponentByName, logComponents }

@@ -77,12 +77,20 @@ Used to register a new component, it takes an object with the following attribut
 - name: Name of your component
 - content: CSS style your component has
 
+**OR**
+
+- contentFile: File which contain your CSS, path must be relative from the root of your project
+
 Unless used with [global](#global), the component will be tied to the current URL
 
-**Example:**
+**Examples:**
 
 ```jsx
 <CSSComponent register={{ name: "should-be-red", content: ".should-be-red {color: red;}" }} />
+```
+
+```jsx
+<CSSComponent register={{ name: "code", contentFile: "src/theme/css/modules/code.css" }} />
 ```
 
 #### global
@@ -93,6 +101,16 @@ By adding this props, you can make the component global, this mean you can call 
 
 ```jsx
 <CSSComponent global register={{ name: "should-be-blue", content: ".should-be-blue {color: blue;}" }} />
+```
+
+#### conditional
+
+By adding this props, you can only register the component when a certain condition is met
+
+**Example:**
+
+```jsx
+<CSSComponent register={{ name: "should-be-orange", content: ".should-be-orange {color: orange;}" conditional={page.loadCSSModules.includes("orange")} }} />
 ```
 
 ### getForURL
