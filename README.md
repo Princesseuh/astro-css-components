@@ -41,7 +41,7 @@ import { CSSComponent } from "astro-css-components"
     <CSSComponent getForURL />
 </head>
 <body>
-    <slot />
+    <slot />q
 </body>
 </html>
 ```
@@ -110,7 +110,7 @@ By adding this props, you can only register the component when a certain conditi
 **Example:**
 
 ```jsx
-<CSSComponent register={{ name: "should-be-orange", content: ".should-be-orange {color: orange;}" conditional={page.loadCSSModules.includes("orange")} }} />
+<CSSComponent register={{ name: "should-be-orange", content: ".should-be-orange {color: orange;}" }} conditional={page.loadCSSModules.includes("orange")} />
 ```
 
 ### getForURL
