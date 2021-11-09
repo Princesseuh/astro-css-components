@@ -1,8 +1,8 @@
 # astro-css-components
 
-⚠️ Very early in development, more of a proof of concept than a real thing at the moment ⚠️
+⚠️ Not in developement anymore, I don't use it for my own projects anymore ⚠️
 
-Add "CSS Components" support to Astro, inspired by [eleventy-assets](https://github.com/11ty/eleventy-assets). This allows you to for instance, add page specific CSS. In my personal blog, I use it to add the CSS needed for syntax coloring only to the page that have code in them
+Add "CSS Components" support to Astro, inspired by [eleventy-assets](https://github.com/11ty/eleventy-assets). This allows you to for instance, add page specific CSS. In my personal blog, I usde it to add the CSS needed for syntax coloring only to the page that have code in them
 
 The API is currently.. not very good. Use at your own caution - it should works, however
 
